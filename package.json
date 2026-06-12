@@ -1,0 +1,72 @@
+{
+  "name": "@bufinance/analytics",
+  "version": "0.1.0",
+  "description": "BUFI cross-repo analytics kit: unified Dune Sim API client (balances, activity, token prices, TVL), a shared daily-metrics contract, and a Dune table uploader so every BUFI product (desk, defi, pasillo) reports volume and traction to one Dune dashboard.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuFi007/bufi-analytics.git"
+  },
+  "homepage": "https://github.com/BuFi007/bufi-analytics#readme",
+  "bugs": "https://github.com/BuFi007/bufi-analytics/issues",
+  "keywords": [
+    "bufi",
+    "bufinance",
+    "dune",
+    "dune-sim",
+    "analytics",
+    "tvl",
+    "usdc",
+    "stablecoin",
+    "circle",
+    "metrics",
+    "grants"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./sim": {
+      "types": "./dist/sim/index.d.ts",
+      "import": "./dist/sim/index.js"
+    },
+    "./metrics": {
+      "types": "./dist/metrics/index.d.ts",
+      "import": "./dist/metrics/index.js"
+    },
+    "./dune": {
+      "types": "./dist/dune/index.d.ts",
+      "import": "./dist/dune/index.js"
+    },
+    "./registry": {
+      "types": "./dist/registry/index.d.ts",
+      "import": "./dist/registry/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "sql"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node --input-type=module -e \"import('./dist/index.js').then(m => { if (!m.DuneSimClient || !m.BufiMetricsSnapshotSchema || !m.DuneUploader) throw new Error('missing exports'); console.log('smoke ok:', Object.keys(m).length, 'exports'); })\"",
+    "prepublishOnly": "bun run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
