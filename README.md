@@ -51,7 +51,7 @@ Queries (public, created via API):
 2. Repeat per project (desk 7710803 / defi 7710804 / pasillo 7710805).
 3. Pin the overview URL here:
 
-> **Dashboard:** _TBD — pinned after UI assembly_
+> **Dashboard:** **[dune.com/criptopoeta1761/bufi-ecosystem](https://dune.com/criptopoeta1761/bufi-ecosystem)**
 
 ## Daily reporter pattern (per repo)
 
