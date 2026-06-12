@@ -32,14 +32,26 @@ import { BUFI_ADDRESSES, addressesToCsv } from '@bufinance/analytics/registry';
 2. `02_per_project.sql` — per-product dashboards (desk / defi / pasillo)
 3. `03_onchain_usdc_flows.sql` — verifiable mainnet USDC flows joined against the uploaded address registry (the audit layer)
 
-### Assembly (one-time, dune.com UI)
+### Live state (namespace `criptopoeta1761`, seeded 2026-06-12)
 
-1. Run each repo's metrics cron once (or `uploadMetricsSnapshots` manually) so the three `dataset_bufi_metrics_*` tables exist, and upload the registry (`addressesToCsv`) as `bufi_addresses`.
-2. Create the four queries from `sql/`, replacing `{{namespace}}` with your Dune handle.
-3. Compose dashboards: **BUFI — Overview** (combined) + one per project. Make them public.
-4. Pin the overview URL here:
+Tables: `dataset_bufi_metrics_{desk,defi,pasillo}` + `dataset_bufi_addresses` — all uploaded.
+Queries (public, created via API):
 
-> **Dashboard:** _TBD — pinned after first upload_
+| Query | ID |
+| --- | --- |
+| BUFI — Combined Overview | [7710800](https://dune.com/queries/7710800) |
+| BUFI — desk daily metrics | [7710803](https://dune.com/queries/7710803) |
+| BUFI — defi daily metrics | [7710804](https://dune.com/queries/7710804) |
+| BUFI — pasillo daily metrics | [7710805](https://dune.com/queries/7710805) |
+| BUFI — Onchain USDC flows | [7710806](https://dune.com/queries/7710806) |
+
+### Assembly (one-time, dune.com UI — dashboards aren't API-creatable)
+
+1. dune.com → New → Dashboard → **"BUFI — Overview"**; add widgets from queries 7710800 + 7710806; make public.
+2. Repeat per project (desk 7710803 / defi 7710804 / pasillo 7710805).
+3. Pin the overview URL here:
+
+> **Dashboard:** _TBD — pinned after UI assembly_
 
 ## Daily reporter pattern (per repo)
 
