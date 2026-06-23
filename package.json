@@ -1,6 +1,6 @@
 {
   "name": "@bufinance/analytics",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "BUFI cross-repo analytics kit: unified Dune Sim API client (balances, activity, token prices, TVL), a shared daily-metrics contract, and a Dune table uploader so every BUFI product (desk, defi, pasillo) reports volume and traction to one Dune dashboard.",
   "license": "MIT",
   "repository": {

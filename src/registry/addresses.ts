@@ -54,6 +54,33 @@ export const BUFI_ADDRESSES: RegisteredAddress[] = [
     label: 'TurboFeeVault (LP deposits)',
     kind: 'vault',
   },
+  // defi — Avalanche mainnet launch (Kawaii Punks NFT, live 2026-06-23). Dune
+  // indexes Avalanche C-Chain, so these light up the public dashboard's mainnet
+  // footprint. Mint proceeds settle to the Safe treasury.
+  {
+    project: 'defi',
+    address: '0x3ce4f5fde5c8aae5b4b10f6b647fdcca1349cd4f',
+    chainId: 43114,
+    chain: 'avalanche_c',
+    label: 'KawaiiPunks ERC-1155 (NFT collection, Circle SCP)',
+    kind: 'protocol',
+  },
+  {
+    project: 'defi',
+    address: '0x1946cf2ca2218217115241be3b4a1ac403eab98f',
+    chainId: 43114,
+    chain: 'avalanche_c',
+    label: 'KawaiiPunks CurveMinter (bonding-curve mint, $0.05→$690.42)',
+    kind: 'protocol',
+  },
+  {
+    project: 'defi',
+    address: '0xA3a40fa2d82C0224c40b1Ed7E07cb474B7D1468B',
+    chainId: 43114,
+    chain: 'avalanche_c',
+    label: 'Prod Safe treasury (mint proceeds + protocol owner; Avalanche + Arc)',
+    kind: 'wallet',
+  },
   // ── pasillo (b-in-bufi) ───────────────────────────────────────────────────
   // No static onchain footprint yet — ramp/FX flows report via the ledger
   // metrics path. Add settlement wallets here when they go live.
